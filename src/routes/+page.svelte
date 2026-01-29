@@ -38,6 +38,9 @@
         <link rel="preload" as="image" href="/images/landing/{num}.png"/>
         <link rel="preload" as="image" href="/images/landingMobile/{num}.png"/>
     {/each}
+    {#each [1, 2, 3, 4] as num}
+        <link rel="preload" as="image" href="/images/wave{num}.png" />
+    {/each}
 </svelte:head>
 <svelte:window bind:scrollY={charY}></svelte:window>
 <style>
@@ -235,7 +238,7 @@
     <div>
         <h1 style:font-size="50px">Make E-Cards</h1>
         <h3>E-Cards should be viewable on the web and engaging!</h3>
-        <button style:margin-top="20px" style:width="60%">View requirements for submissions</button>
+        <button onclick={function() {window.location.href = base + "/requirements"}} style:margin-top="20px" style:width="60%">View requirements for submissions</button>
     </div>
     <div>
         <a href="https://hacklyn.city/orpheus"><img translate="no" src="/images/orpheusCard.png" alt="Demo e-card" style:max-width=90% style:transform="rotate(2deg)"/></a>
@@ -253,13 +256,13 @@
         <div>
             <h1 style:font-size="50px">Earn Prizes</h1>
             <h3>The shop includes heart themed merch and even a Hack Club sweatshirt!</h3>
-            <button style:margin-top="20px" style:width="60%">Check out the Shop</button>
+            <button onclick = {function() { window.location.href = base + "/shop"}} style:margin-top="20px" style:width="60%">Check out the Shop</button>
         </div>
         {:else}
         <div>
             <h1 style:font-size="50px">Earn Prizes</h1>
             <h3>The shop includes heart themed merch and even a Hack Club sweatshirt!</h3>
-            <button style:margin-top="20px" style:width="60%">Check out the Shop</button>
+            <button onclick = {function() { window.location.href = base + "/shop"}} style:margin-top="20px" style:width="60%">Check out the Shop</button>
         </div>
         <div> 
             <img style:border-radius=30px style="display: flex; align-self: center;" translate="no" src="/images/sweatshirt.png" alt="Sweatshirt" style:max-width=60% style:height="auto" style:transform="rotate(-2deg)"/>
@@ -280,12 +283,24 @@
     <h2 style:font-family="Playwrite DK Loopet, Montserrat, Gabarito" style:margin-bottom=20px>Sugar Rush Bonuses</h2>
     <div id="sugarGrid">
         <div>
+            <h3>+1 Heart</h3>
+            <p>Spend over 10 hours on your project</p>
+        </div>
+        <div>
+            <h3>+1 Heart</h3>
+            <p>Make a card for someone in Hack Club! Include a picture in the slack channel of you sending them the card.</p>
+        </div>
+        <div>
             <h3>+2 Hearts</h3>
             <p>Full usability through keyboard. Users should be able to fully control what pages they are on without having to use buttons or elements on the UI.</p>
         </div>
         <div>
             <h3>+3 Hearts</h3>
             <p>Incorporate music, speech, or both to your project.</p>
+        </div>
+        <div>
+            <h3>+3 Hearts</h3>
+            <p>Your site works well with translation tools, while still being visually engaging and fun!</p>
         </div>
         <div>
             <h3>+5 Hearts</h3>
@@ -318,7 +333,7 @@
     </div>
     <div>
         <h2>Can I submit multiple projects?</h2>
-        <p>Yes! You can make multiple e-cards; however, you should challenge yourself to add more features to each new submission <i>(we will check the progression of your submissions)</i>. For prizes such as the sweatshirt, you won't likely get enough hearts from one submission to purchase.</p>
+        <p>Yes! You can make multiple e-cards; however, you should challenge yourself to add more features to each new submission <i>(we will check the progression of your submissions)</i>. For prizes such as the sweatshirt, you aren't likely to get enough hearts from one submission to purchase.</p>
     </div>
     <div>
         <h2>How many hours do I need to put into a project at minimum?</h2>
@@ -327,6 +342,10 @@
     <div>
         <h2>If I get a grant for an item, how can I use it?</h2>
         <p>All grants will be processed and distributed on <a href="https://hcb.hackclub.com">HCB</a>. You should signup on the platform and use the same email that you use on your submission form.</p>
+    </div>
+    <div>
+        <h2>How many hearts will an average project get?</h2>
+        <p>The average amount of hearts a 6-hour project with no sugar rushes will get is around 4 hearts.</p>
     </div>
     <div>
         <h2>I have more questions!</h2>
