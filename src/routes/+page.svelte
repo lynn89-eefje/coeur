@@ -39,7 +39,7 @@
         <link rel="preload" as="image" href="/images/landingMobile/{num}.png"/>
     {/each}
     {#each [1, 2, 3, 4] as num}
-        <link rel="preload" as="image" href="/images/wave{num}.png" />
+        <link rel="preload" as="image" href="{base}/images/wave{num}.png" />
     {/each}
 </svelte:head>
 <svelte:window bind:scrollY={charY}></svelte:window>
@@ -204,7 +204,7 @@
     }
 
     #faq {
-        background-image: url("/images/landing/1.png");
+        background-image: url("{base}/images/landing/1.png");
         background-color: rgb(130, 30, 65);
         padding-bottom: 20px;
         text-align: center;
@@ -225,14 +225,14 @@
 </style>
 <div id="landing">
     {#if mobile == ""}
-    <img src="/images/landing{mobile}/1.png" style:transform="translateY({charY*0.5*mobileFactor}px)" alt="background"/>
+    <img src="{base}/images/landing{mobile}/1.png" style:transform="translateY({charY*0.5*mobileFactor}px)" alt="background"/>
     {:else}
-    <img src="/images/landing{mobile}/1.png" alt="background"/>
+    <img src="{base}/images/landing{mobile}/1.png" alt="background"/>
     {/if}
-    <img src="/images/landing{mobile}/2.png" style:transform="translateY({charY*0.5*mobileFactor}px)" id="titleLogo" translate="no" alt="Title" class="graphic"/>
-    <img src="/images/landing{mobile}/3.png" class="graphic" alt="Orpheus and Heidi" />
-    <img src="/images/landing{mobile}/4.png" class="graphic wave" alt="Pink Wave"/>
-    <img src="/images/landing{mobile}/5.png" class="graphic" alt="Orpheus's Hands" />
+    <img src="{base}/images/landing{mobile}/2.png" style:transform="translateY({charY*0.5*mobileFactor}px)" id="titleLogo" translate="no" alt="Title" class="graphic"/>
+    <img src="{base}/images/landing{mobile}/3.png" class="graphic" alt="Orpheus and Heidi" />
+    <img src="{base}/images/landing{mobile}/4.png" class="graphic wave" alt="Pink Wave"/>
+    <img src="{base}/images/landing{mobile}/5.png" class="graphic" alt="Orpheus's Hands" />
 </div>
 <div id="ys">
     <div>
@@ -241,16 +241,16 @@
         <button onclick={function() {window.location.href = base + "/requirements"}} style:margin-top="20px" style:width="60%">View requirements for submissions</button>
     </div>
     <div>
-        <a href="https://hacklyn.city/orpheus"><img translate="no" src="/images/orpheusCard.png" alt="Demo e-card" style:max-width=90% style:transform="rotate(2deg)"/></a>
+        <a href="https://hacklyn.city/orpheus"><img translate="no" src="{base}/images/orpheusCard.png" alt="Demo e-card" style:max-width=90% style:transform="rotate(2deg)"/></a>
         <p>Check out this example! <i>(Click on the image)</i></p>
     </div>
 </div> 
 <div id="ws">
-    <img class="waveDown" src="/images/wave1.png" alt="Wave graphic" style:width="100%" style:user-select="none" style:-webkit-user-drag="none"/>
+    <img class="waveDown" src="{base}/images/wave1.png" alt="Wave graphic" style:width="100%" style:user-select="none" style:-webkit-user-drag="none"/>
     <div id="grid" class:mobile={mobile != ""}>
         {#if mobile == ""}
         <div>
-            <img translate="no" src="/images/sweatshirt.png" alt="Sweatshirt" style:max-width=60% style:height="auto" style:transform="rotate(-2deg)" style:border-radius=30px/>
+            <img translate="no" src="{base}/images/sweatshirt.png" alt="Sweatshirt" style:max-width=60% style:height="auto" style:transform="rotate(-2deg)" style:border-radius=30px/>
             <p>Each item requires hearts to purchase. You can earn hearts from your submissions; the amount of hearts for each submission depends on the quality of your project, duration of time you put into making it, and sugar rushes <i>(next section)</i>.</p>
         </div>
         <div>
@@ -265,20 +265,20 @@
             <button onclick = {function() { window.location.href = base + "/shop"}} style:margin-top="20px" style:width="60%">Check out the Shop</button>
         </div>
         <div> 
-            <img style:border-radius=30px style="display: flex; align-self: center;" translate="no" src="/images/sweatshirt.png" alt="Sweatshirt" style:max-width=60% style:height="auto" style:transform="rotate(-2deg)"/>
+            <img style:border-radius=30px style="display: flex; align-self: center;" translate="no" src="{base}/images/sweatshirt.png" alt="Sweatshirt" style:max-width=60% style:height="auto" style:transform="rotate(-2deg)"/>
             <p>Each item requires hearts to purchase. You can earn hearts from your submissions; the amount of hearts for each submission depends on the quality of your project, duration of time you put into making it, and sugar rushes <i>(next section)</i>.</p>
         </div>
         {/if} 
     </div>
 </div>
 <div id="sugarRush">
-    <img class="waveDown" src="/images/wave2.png" alt="Wave graphic" style:width="100%" style:user-select="none" style:-webkit-user-drag="none"/>
+    <img class="waveDown" src="{base}/images/wave2.png" alt="Wave graphic" style:width="100%" style:user-select="none" style:-webkit-user-drag="none"/>
     <h1 style:font-size=50px>Sugar Rushes!</h1>
     <p style:margin-bottom=30px>You can earn more hearts for each project you submit by getting sugar rushes. Sugar rushes are bonuses for completing tasks and pushing your bounds!</p>
     {#if mobile == ""}
-    <img src="/images/donut.png" alt="Orpheus in a giant donut" style="width: 30%; height: auto"/>
+    <img src="{base}/images/donut.png" alt="Orpheus in a giant donut" style="width: 30%; height: auto"/>
     {:else}
-    <img src="/images/donut.png" alt="Orpheus in a giant donut" style="width: 50%; height: auto;"/>
+    <img src="{base}/images/donut.png" alt="Orpheus in a giant donut" style="width: 50%; height: auto;"/>
     {/if}
     <h2 style:font-family="Playwrite DK Loopet, Montserrat, Gabarito" style:margin-bottom=20px>Sugar Rush Bonuses</h2>
     <div id="sugarGrid">
@@ -299,10 +299,6 @@
             <p>Incorporate music, speech, or both to your project.</p>
         </div>
         <div>
-            <h3>+3 Hearts</h3>
-            <p>Your site works well with translation tools, while still being visually engaging and fun!</p>
-        </div>
-        <div>
             <h3>+5 Hearts</h3>
             <p>Exceptional use of animations and graphics. All illustrations should also be original.</p>
         </div>
@@ -314,18 +310,18 @@
     <p>More may be added in the future. Check back here periodically!</p>
 </div>
 <div id="submit">
-    <img src="/images/wave3.png" alt="Wave graphic" class="waveDown" style="width: 100%; user-select: none; -webkit-user-drag: none" />
+    <img src="{base}/images/wave3.png" alt="Wave graphic" class="waveDown" style="width: 100%; user-select: none; -webkit-user-drag: none" />
 
     <h1 style="padding: 20px;">Ready to submit?</h1>
     <p style="margin-bottom: 30px; padding: 20px;">That's great! Our submissions form isn't up yet; however, when it is, you can check back here!</p>
     {#if mobile == ""}
-    <img src="/images/envelope.png" alt="Envelope" style="max-width: 500px; transform: rotate(3deg);"/>
+    <img src="{base}/images/envelope.png" alt="Envelope" style="max-width: 500px; transform: rotate(3deg);"/>
     {:else}
-    <img src="/images/envelope.png" alt="Envelope" style="max-width: 200px; transform: rotate(3deg);"/>
+    <img src="{base}/images/envelope.png" alt="Envelope" style="max-width: 200px; transform: rotate(3deg);"/>
     {/if}
 </div>
 <div id="faq">
-    <img class="waveDown" alt="Wave graphic" src="/images/wave4.png" style="width: 100%; height: auto; user-select: none; -webkit-user-drag: none" /> 
+    <img class="waveDown" alt="Wave graphic" src="{base}/images/wave4.png" style="width: 100%; height: auto; user-select: none; -webkit-user-drag: none" /> 
     <h1 style:text-shadow="0px 0px 20px grey">FAQ</h1>
     <div>
         <h2>Can I participate in this program?</h2>
@@ -345,7 +341,7 @@
     </div>
     <div>
         <h2>How many hearts will an average project get?</h2>
-        <p>The average amount of hearts a 6-hour project with no sugar rushes will get is around 4 hearts.</p>
+        <p>The average amount of hearts a 6-hour project with no sugar rushes will get is around 5 hearts. The demo project would get around 8 hearts in total, including one +2 sugar rush.</p>
     </div>
     <div>
         <h2>I have more questions!</h2>

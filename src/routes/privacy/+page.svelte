@@ -16,8 +16,8 @@
 </script>
 <svelte:head>
     <title>Privacy Policy | Coeur</title>
-    <link rel="preload" href="/images/landing/1.png" as="image" />
-    <link rel="preload" href="/images/landingMobile/1.png" as="image" />
+    <link rel="preload" href="{base}/images/landing/1.png" as="image" />
+    <link rel="preload" href="{base}/images/landingMobile/1.png" as="image" />
 </svelte:head>
 <svelte:window bind:innerWidth={charX}></svelte:window>
 
@@ -69,7 +69,7 @@
     }
 </style>
 <div id="header">
-    <img src="/images/landing{mobile}/1.png" alt="Heart background"/>
+    <img src="{base}/images/landing{mobile}/1.png" alt="Heart background"/>
     <div>
         <h1 style:margin-bottom=20px>Privacy Policy</h1>
         <h2 style:margin-bottom=40px>Your privacy is paramount to us</h2>

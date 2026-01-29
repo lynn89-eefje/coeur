@@ -18,10 +18,10 @@
 </script>
 <svelte:head>
     <title>Requirements | Coeur</title>
-    <link rel="preload" href="/images/landing/1.png" as="image" />
-    <link rel="preload" href="/images/landingMobile/1.png" as="image" />
-    <link rel="preload" href="/images/wave5.png" as="image" />
-    <link rel="preload" href="/images/heidiEnvelope.png" as="image" />
+    <link rel="preload" href="{base}/images/landing/1.png" as="image" />
+    <link rel="preload" href="{base}/images/landingMobile/1.png" as="image" />
+    <link rel="preload" href="{base}/images/wave5.png" as="image" />
+    <link rel="preload" href="{base}/images/heidiEnvelope.png" as="image" />
 </svelte:head>
 <svelte:window bind:innerWidth={charX} bind:scrollY={scroll}></svelte:window>
 
@@ -89,22 +89,22 @@
     }
 </style>
 <div id="header">
-    <img src="/images/landing{mobile}/1.png" alt="Heart background"/>
+    <img src="{base}/images/landing{mobile}/1.png" alt="Heart background"/>
     <div id="parallax">
         <div id="parallaxContent" style:transform = "translateY({scroll*0.7}px)">
                 <h1>REQUIREMENTS</h1>
                 <p style:margin-bottom=40px>These must be completed for all submissions to <span translate="no">Cœur</span></p>
                 {#if mobile == ""}
-            <img id="heidiEnvelope" src="/images/heidiEnvelope.png" alt="Heidi in an envelope" style="width: 35%; height: auto; display: block; margin: 0 auto;" />
+            <img id="heidiEnvelope" src="{base}/images/heidiEnvelope.png" alt="Heidi in an envelope" style="width: 35%; height: auto; display: block; margin: 0 auto;" />
             {:else}
-            <img id="heidiEnvelope" src="/images/heidiEnvelope.png" alt="Heidi in an envelope" style="width: 65%; height: auto; display: block; margin: 0 auto;" />
+            <img id="heidiEnvelope" src="{base}/images/heidiEnvelope.png" alt="Heidi in an envelope" style="width: 65%; height: auto; display: block; margin: 0 auto;" />
             {/if}
         </div>
         
     </div>
 </div>
 <div id="content">
-    <img src="/images/wave5.png" alt="Wave graphic" style:width=100% style:transform="translateY(15px)"/>
+    <img src="{base}/images/wave5.png" alt="Wave graphic" style:width=100% style:transform="translateY(15px)"/>
 
     <div id="container">
         <button onclick={function() {window.location.href = base + "/"}}>Return Home</button>
