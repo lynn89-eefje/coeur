@@ -35,8 +35,8 @@
 <svelte:head>
     <title>Coeur</title>
     {#each [1, 2, 3, 4, 5] as num}
-        <link rel="preload" as="image" href="/images/landing/{num}.png"/>
-        <link rel="preload" as="image" href="/images/landingMobile/{num}.png"/>
+        <link rel="preload" as="image" href="{base}/images/landing/{num}.png"/>
+        <link rel="preload" as="image" href="{base}/images/landingMobile/{num}.png"/>
     {/each}
     {#each [1, 2, 3, 4] as num}
         <link rel="preload" as="image" href="{base}/images/wave{num}.png" />

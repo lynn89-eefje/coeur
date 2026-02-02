@@ -45,14 +45,14 @@
             text-align: center;
             text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.185);
             h1 {
-                font-size: 50px;
+                font-size: 40px;
                 font-weight: 900;
             }
 
         }
     }
     #content {
-        margin-top: 600px;
+        margin-top: 450px;
         z-index: 1;
         #container {
             background-color: rgb(83, 26, 50);
